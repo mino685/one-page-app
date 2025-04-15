@@ -96,7 +96,7 @@ export default function Home() {
                   desc: 'Profesionálne prezentácie a microsites na mieru.',
                 },
               ].map((s, i) => (
-                <Grid item xs={12} md={4} key={i}>
+                <Grid>
                   <Paper elevation={4} sx={{ p: 3, textAlign: 'center', backgroundColor: '#e3f2fd' }}>
                     <Typography variant="h6" fontWeight="bold">{s.title}</Typography>
                     <Typography>{s.desc}</Typography>
