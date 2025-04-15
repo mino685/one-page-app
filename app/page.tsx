@@ -15,6 +15,8 @@ import {
   CircularProgress,
   Collapse,
   Container,
+  CssBaseline,
+  Divider,
   Drawer,
   FormControlLabel,
   FormLabel,
@@ -22,6 +24,7 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
   OutlinedInput,
   Paper,
@@ -38,9 +41,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 
 
+interface Props {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window?: () => Window;
+}
 
-export default function Home() {
-
+export default function Home(props: Props) {
+  const { window } = props;
   const form = useRef<HTMLFormElement>(null);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -57,6 +67,27 @@ export default function Home() {
 
   const navItems = ['O nás', 'Služby', 'Kontakt'];
 
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        Nest Frame Studio
+      </Typography>
+      <Divider />
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary={item} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+  const drawerWidth = 240;
+
+  const container = window !== undefined ? () => window().document.body : undefined;
+
 
     return (
       <>
@@ -65,36 +96,51 @@ export default function Home() {
         <meta name="description" content="Webové aplikácie, dashboardy a firemné riešenia." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <AppBar position="sticky" sx={{ backgroundColor: '#0d47a1' }}>
+      <CssBaseline />
+      <AppBar component="nav">
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Nest Frame STUDIO
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            Nest Frame Studio
           </Typography>
-          {isMobile ? (
-            <IconButton color="inherit" edge="end" onClick={handleDrawerToggle}>
-              <MenuIcon />
-            </IconButton>
-          ) : (
-            navItems.map((item) => (
-              <Button key={item} color="inherit">{item}</Button>
-            ))
-          )}
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            {navItems.map((item) => (
+              <Button key={item} sx={{ color: '#fff' }}>
+                {item}
+              </Button>
+            ))}
+          </Box>
         </Toolbar>
       </AppBar>
-
-      <Drawer
-        anchor="right"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        sx={{ '& .MuiDrawer-paper': { width: 240 } }}
-      >
-        <List>
-          {navItems.map((item, index) => (
-              <ListItemText primary={item} key={index} />
-          ))}
-        </List>
-      </Drawer>
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>
 
       <Box
         sx={{
@@ -105,7 +151,7 @@ export default function Home() {
         }}
       >
         <Container maxWidth="md">
-          <Box textAlign="center" sx={{ mb: 10 }}>
+          <Box textAlign="center" sx={{ mb: 10, mt:4 }}>
             <Typography variant="h2" fontWeight="bold" sx={{ color: '#0d47a1' }} gutterBottom>
               Nest Frame STUDIO
             </Typography>
@@ -115,7 +161,8 @@ export default function Home() {
             <Button
               variant="contained"
               size="large"
-              sx={{ backgroundColor: '#0d47a1', ':hover': { backgroundColor: '#1565c0' } }}
+              sx={{ pt:3, pb:3, pl: 6, pr: 6, backgroundColor: '#0d47a1', ':hover': { backgroundColor: '#1565c0' } }}
+              onClick={() => console.log("KONTAKT")}
             >
               Kontaktujte nás
             </Button>
