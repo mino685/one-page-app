@@ -130,13 +130,13 @@ export default function NavigationComponent(props: Props) {
               >
                 <FacebookOutlined />
               </IconButton>
-              <IconButton
+              {/*<IconButton
                 size="large"
                 aria-label="show 4 new mails"
                 color="inherit"
               >
                 <Twitter />
-              </IconButton>
+              </IconButton>*/}
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"

@@ -1,4 +1,4 @@
-/*export const mainInformationDataSet = {
+export const mainInformationDataSet = {
   productName: "Nest Frame Studio",
   title:
     "Dodávame moderné a spoľahlivé riešenia – interaktívne dashboardy, robustné firemné systémy a webové aplikácie šité presne na mieru vašim potrebám.",
@@ -43,14 +43,14 @@ export const workSkillsDataSet = [
     title: "Admin rozhrania",
     desc: "Flexibilné backendové nástroje pre správu obsahu, užívateľov alebo produktov. Vytvárame ich s dôrazom na jednoduchosť, bezpečnosť a prístupové práva.",
   },
-  //{
-  //  title: "Automatizácia procesov",
-  //  desc: "Prepájame systémy, API a databázy tak, aby vaše procesy bežali hladko a bez zbytočnej manuálnej práce. Či už ide o preposielanie dát, //synchronizácie //alebo automatické upozornenia, šetríme vám čas aj náklady.",
-  //},
-  //{
-  //  title: "Konzultácie a technický návrh",
-  //  desc: "Pomáhame vám od prvého nápadu až po spustenie. Vysvetlíme, navrhneme, poradíme – tak, aby riešenie bolo efektívne, bezpečné a dlhodobo udržateľné.",
-  //},
+  /*{
+    title: "Automatizácia procesov",
+    desc: "Prepájame systémy, API a databázy tak, aby vaše procesy bežali hladko a bez zbytočnej manuálnej práce. Či už ide o preposielanie dát, synchronizácie alebo automatické upozornenia, šetríme vám čas aj náklady.",
+  },
+  {
+    title: "Konzultácie a technický návrh",
+    desc: "Pomáhame vám od prvého nápadu až po spustenie. Vysvetlíme, navrhneme, poradíme – tak, aby riešenie bolo efektívne, bezpečné a dlhodobo udržateľné.",
+  },*/
 ];
 
 export const aboutUsDataSet = [
@@ -73,72 +73,5 @@ export const aboutUsDataSet = [
   {
     title: "Spoľahlivý partner pre váš rast",
     desc: "Ak hľadáte spoľahlivého partnera, ktorý rozumie vývoju aj podnikaniu, a dokáže vaše predstavy premeniť na funkčné riešenie – radi si s vami sadneme, porozprávame sa a nájdeme ideálnu cestu vpred.",
-  },
-];*/
-
-export const mainInformationDataSet = {
-  productName: "Kovovýroba a zámočníctvo BRILZ",
-  title:
-    "Komplexné zámočnícke práce a kovovýroba – od návrhu a cenovej ponuky až po precíznu realizáciu a doručenie hotového výrobku k vám domov.",
-  contactPhone: " 0908 859 615",
-  contactEmail: "milan.kozak94@gmail.com",
-};
-
-export const colorsDataSet = {
-  pageBackground: "#f5f5f5",
-  basicFont: "#263238",
-  headerBackground: "#263238",
-  footerBackground: "#263238",
-  primaryFont: "#0d47a1",
-  mainButton: "#0d47a1",
-  mainButtonHover: "#1565c0",
-  navbarItems: "#fff",
-};
-
-export const navigationItemsDataSet = ["O nás", "Služby", "Kontakt"];
-
-export const workSkillsDataSet = [
-  {
-    title: "Kovovýroba na mieru",
-    desc: "Výroba oceľových, nerezových a hliníkových konštrukcií presne podľa požiadaviek zákazníka. Od kusovej výroby po väčšie série.",
-  },
-  {
-    title: "Zámočnícke práce",
-    desc: "Profesionálne zváranie, brúsenie, ohýbanie, vŕtanie a montáž kovových komponentov. Precízne spracovanie s dôrazom na detail a pevnosť.",
-  },
-  {
-    title: "Tvorba technických nákresov",
-    desc: "Na základe vašich predstáv vytvoríme technické výkresy a vizualizácie výrobku pre vašu spätnú kontrolu a schválenie pred samotnou výrobou.",
-  },
-  {
-    title: "Realizácia a montáž",
-    desc: "Zabezpečujeme kompletnú realizáciu vrátane montáže na mieste – spoľahlivo, bezpečne a v dohodnutých termínoch.",
-  },
-  {
-    title: "Dovoz výrobkov",
-    desc: "Hotové výrobky doručíme priamo k vám. Pre väčšie zákazky ponúkame aj možnosť kompletnej montáže a inštalácie u zákazníka.",
-  },
-];
-
-export const aboutUsDataSet = [
-  {
-    title: "Precíznosť a kvalita na prvom mieste",
-    desc: "Sme slovenská rodinná firma, ktorá si zakladá na kvalite, spoľahlivosti a férovom jednaní. Každý výrobok je výsledkom dôkladnej prípravy, remeselnej zručnosti a dlhoročných skúseností.",
-  },
-  {
-    title: "Komplexné riešenia od návrhu po realizáciu",
-    desc: "Ponúkame kompletný servis – od prvotného návrhu, cez cenovú ponuku a výrobu až po montáž a doručenie. Ušetríme vám čas aj starosti.",
-  },
-  {
-    title: "Skúsenosti a remeselná zručnosť",
-    desc: "Máme viac ako 30 rokov skúseností v oblasti kovovýroby a zámočníctva. Spoľahnite sa na poctivú prácu a remeslo s tradíciou.",
-  },
-  {
-    title: "Riešenia pre firmy aj domácnosti",
-    desc: "Spolupracujeme s jednotlivcami aj firmami. Dodávame zábradlia, schodiská, brány, rámy, konzoly, konštrukcie a iné kovové výrobky podľa vašich potrieb.",
-  },
-  {
-    title: "Spoľahlivý partner na ktorého sa môžete obrátiť",
-    desc: "Vaša spokojnosť je pre nás prioritou. Komunikujeme otvorene, dodržiavame termíny a ponúkame technické poradenstvo počas celej spolupráce.",
   },
 ];

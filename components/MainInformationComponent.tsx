@@ -1,16 +1,16 @@
 "use client";
 
-import { Box, Button, Skeleton, Typography } from "@mui/material";
+import { Box, Button, CardMedia, Skeleton, Typography } from "@mui/material";
 
 import { colorsDataSet, mainInformationDataSet } from "../app/data";
 
 export default function MainInformationComponent() {
   return (
     <Box textAlign="center" sx={{ mb: 10, mt: 4 }}>
-      <Skeleton
-        sx={{ height: 250, borderRadius: 2 }}
-        animation="wave"
-        variant="rectangular"
+      <CardMedia
+        sx={{ height: 350, borderRadius: 4 }}
+        image="/brilzW.jpg"
+        title="green iguana"
       />
       <Typography variant="h4" fontWeight="bold" sx={{ mt: 2 }} gutterBottom>
         {mainInformationDataSet.productName}

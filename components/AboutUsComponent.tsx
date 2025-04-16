@@ -5,6 +5,7 @@ import {
   AccordionDetails,
   AccordionSummary,
   Box,
+  CardMedia,
   Grid,
   Skeleton,
   Typography,
@@ -39,17 +40,17 @@ export default function AboutUsComponent() {
             <Typography component="span">{item.desc}</Typography>
           </Grid>
           <Grid size={{ xs: 12, md: index % 2 === 0 ? 8 : 4 }}>
-            <Skeleton
+            <CardMedia
               sx={{ height: 250, borderRadius: 2 }}
-              animation="wave"
-              variant="rectangular"
+              image="/brilzW.jpg"
+              title="green iguana"
             />
           </Grid>
           <Grid size={{ xs: 12, md: index % 2 === 0 ? 4 : 8 }}>
-            <Skeleton
+            <CardMedia
               sx={{ height: 250, borderRadius: 2 }}
-              animation="wave"
-              variant="rectangular"
+              image="/brilzH.jpg"
+              title="green iguana"
             />
           </Grid>
         </Grid>
