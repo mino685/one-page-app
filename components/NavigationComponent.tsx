@@ -83,9 +83,14 @@ export default function NavigationComponent(props: Props) {
 
   return (
     <>
-      <NavigationComponent />
       <HideOnScroll>
-        <AppBar component="nav">
+        <AppBar
+          component="nav"
+          sx={{
+            backgroundColor: colorsDataSet.headerBackground,
+            color: colorsDataSet.navbarItems,
+          }}
+        >
           <Toolbar>
             <IconButton
               color="inherit"
@@ -110,7 +115,7 @@ export default function NavigationComponent(props: Props) {
                 </Button>
               ))}
             </Box>
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Box sx={{ display: { xs: "flex" } }}>
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
@@ -157,6 +162,8 @@ export default function NavigationComponent(props: Props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor: colorsDataSet.headerBackground,
+              color: colorsDataSet.navbarItems,
             },
           }}
         >

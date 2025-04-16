@@ -7,8 +7,10 @@ export const mainInformationDataSet = {
 };
 
 export const colorsDataSet = {
-  pageBackground: "linear-gradient(135deg, #e3f2fd, #f5f5f5)",
+  pageBackground: "#f5f5f5",
   basicFont: "#263238",
+  headerBackground: "#263238",
+  footerBackground: "#263238",
   primaryFont: "#0d47a1",
   mainButton: "#0d47a1",
   mainButtonHover: "#1565c0",

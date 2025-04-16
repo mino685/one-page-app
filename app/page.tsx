@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, CssBaseline } from "@mui/material";
+import { Box, Container, CssBaseline, Divider } from "@mui/material";
 import Head from "next/head";
 import { colorsDataSet, mainInformationDataSet } from "./data";
 import NavigationComponent from "../components/NavigationComponent";
@@ -8,6 +8,7 @@ import MainInformationComponent from "../components/MainInformationComponent";
 import AboutUsComponent from "../components/AboutUsComponent";
 import WorkSkillsComponent from "../components/WorkSkillsComponent";
 import ContactComponent from "../components/ContactComponent";
+import FooterComponent from "../components/FooterComponent";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CssBaseline />
+      <NavigationComponent />
       <Box
         sx={{
           minHeight: "100vh",
@@ -36,6 +38,7 @@ export default function Home() {
           <ContactComponent />
         </Container>
       </Box>
+      <FooterComponent />
     </>
   );
 }

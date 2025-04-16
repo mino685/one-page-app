@@ -12,12 +12,7 @@ export default function MainInformationComponent() {
         animation="wave"
         variant="rectangular"
       />
-      <Typography
-        variant="h2"
-        fontWeight="bold"
-        sx={{ color: colorsDataSet.primaryFont, mt: 2 }}
-        gutterBottom
-      >
+      <Typography variant="h4" fontWeight="bold" sx={{ mt: 2 }} gutterBottom>
         {mainInformationDataSet.productName}
       </Typography>
       <Typography variant="h6" sx={{ mb: 4 }}>
