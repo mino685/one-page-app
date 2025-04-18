@@ -20,7 +20,7 @@ export default function WorkSkillsComponent({
 }) {
   return (
     <Box
-      sx={{ mb: 10, ml: { xs: 2, sm: 0 }, mr: { xs: 2, sm: 0 } }}
+      sx={{ pt: 10, ml: { xs: 2, sm: 0 }, mr: { xs: 2, sm: 0 } }}
       ref={sectionRef}
     >
       <Typography variant="h4" textAlign="center" gutterBottom>

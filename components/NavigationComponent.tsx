@@ -142,8 +142,10 @@ export default function NavigationComponent(props: Props) {
               component="div"
               sx={{ flexGrow: 1, display: { sm: "block" } }}
             >
-              <Phone sx={{ color: "green" }} />{" "}
-              {mainInformationDataSet.contactPhone}
+              <a href={mainInformationDataSet.contactPhone}>
+                <Phone sx={{ color: "green" }} />{" "}
+                {mainInformationDataSet.contactPhoneVisual}
+              </a>
             </Typography>
           </Box>
         </Toolbar>

@@ -1,16 +1,6 @@
 "use client";
 
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  CardMedia,
-  Grid,
-  Skeleton,
-  Typography,
-} from "@mui/material";
-import { ExpandMore } from "@mui/icons-material";
+import { Box, CardMedia, Grid, Typography } from "@mui/material";
 import { aboutUsDataSet, colorsDataSet } from "../app/data";
 import { RefObject } from "react";
 
@@ -20,7 +10,7 @@ export default function AboutUsComponent({
   sectionRef: RefObject<HTMLDivElement | null>;
 }) {
   return (
-    <Box ref={sectionRef} sx={{ mb: 10 }}>
+    <Box sx={{ pt: 10 }} ref={sectionRef}>
       <Typography variant="h4" gutterBottom sx={{ textAlign: "center" }}>
         O nás
       </Typography>

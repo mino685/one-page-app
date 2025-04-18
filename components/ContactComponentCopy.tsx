@@ -1,49 +1,24 @@
-import { colorsDataSet } from "@/app/data";
-import {
-  Box,
-  Typography,
-  Snackbar,
-  Alert,
-  Button,
-  TextField,
-} from "@mui/material";
-import { useState, ChangeEvent, FormEvent } from "react";
+"use client";
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+import {
+  Alert,
+  Box,
+  Button,
+  Snackbar,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { useRef, useState } from "react";
+import { colorsDataSet } from "../app/data";
 
 export default function ContactComponent({ sectionRef }: { sectionRef: any }) {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [sent, setSent] = useState(false);
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: FormEvent) => {
+  const form = useRef<HTMLFormElement>(null);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-
-    if (res.ok) {
-      setSent(true);
-      setFormData({ name: "", email: "", message: "" });
-    }
   };
+
+  console.log("CR: ", sectionRef);
 
   return (
     <>
@@ -58,9 +33,11 @@ export default function ContactComponent({ sectionRef }: { sectionRef: any }) {
         <Typography sx={{ mb: 4 }}>
           Vyplňte formulár a odpovieme vám do 24 hodín.
         </Typography>
+
         <Box
           component="form"
-          onSubmit={handleSubmit}
+          ref={form}
+          onSubmit={sendEmail}
           sx={{
             maxWidth: 500,
             mx: "auto",
@@ -73,19 +50,15 @@ export default function ContactComponent({ sectionRef }: { sectionRef: any }) {
         >
           <TextField
             label="Vaše meno"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+            name="user_name"
             fullWidth
             required
             sx={{ mb: 2 }}
           />
           <TextField
             label="Váš email"
-            name="email"
+            name="user_email"
             type="email"
-            value={formData.email}
-            onChange={handleChange}
             fullWidth
             required
             sx={{ mb: 2 }}
@@ -93,8 +66,6 @@ export default function ContactComponent({ sectionRef }: { sectionRef: any }) {
           <TextField
             label="Vaša správa"
             name="message"
-            value={formData.message}
-            onChange={handleChange}
             fullWidth
             multiline
             rows={8}
@@ -112,17 +83,17 @@ export default function ContactComponent({ sectionRef }: { sectionRef: any }) {
           >
             Odoslať správu
           </Button>
-          <Snackbar
-            open={sent}
-            autoHideDuration={4000}
-            onClose={() => setSent(false)}
-          >
-            <Alert severity="success" sx={{ width: "100%" }}>
-              Správa bola úspešne odoslaná!
-            </Alert>
-          </Snackbar>
         </Box>
       </Box>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={4000}
+        onClose={() => setOpenSnackbar(false)}
+      >
+        <Alert severity="success" sx={{ width: "100%" }}>
+          Správa bola úspešne odoslaná!
+        </Alert>
+      </Snackbar>
     </>
   );
 }

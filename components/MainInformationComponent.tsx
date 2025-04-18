@@ -11,7 +11,7 @@ export default function MainInformationComponent({
   scrollToContact: () => void;
 }) {
   return (
-    <Box textAlign="center" sx={{ mb: 10, mt: { xs: 0, sm: 4 } }}>
+    <Box textAlign="center" sx={{ mt: { xs: 0, sm: 4 } }}>
       <CardMedia
         sx={{ height: { xs: 200, sm: 350 }, borderRadius: { xs: 0, sm: 4 } }}
         image="/brilzW.jpg"
