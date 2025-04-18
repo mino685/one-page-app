@@ -41,20 +41,6 @@ interface Props {
   children?: React.ReactElement<unknown>;
 }
 
-function HideOnScroll(props: Props) {
-  const { window, children } = props;
-
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-  });
-
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children ?? <div />}
-    </Slide>
-  );
-}
-
 export default function NavigationComponent(props: Props) {
   const { scrollToContact, scrollToAboutUs, scrollToWorkSkills, window } =
     props;
@@ -114,58 +100,54 @@ export default function NavigationComponent(props: Props) {
 
   return (
     <>
-      <HideOnScroll>
-        <AppBar
-          component="nav"
-          sx={{
-            backgroundColor: colorsDataSet.headerBackground,
-            color: colorsDataSet.navbarItems,
-          }}
-        >
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <Menu />
-            </IconButton>
+      <AppBar
+        component="nav"
+        sx={{
+          backgroundColor: colorsDataSet.headerBackground,
+          color: colorsDataSet.navbarItems,
+        }}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <Menu />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { sm: "block" } }}
+          >
+            {mainInformationDataSet.companyName}
+          </Typography>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {navigationItemsDataSet.map((item, index) => (
+              <Button
+                key={index}
+                sx={{ color: colorsDataSet.navbarItems }}
+                onClick={scrollTo[index]}
+              >
+                {item}
+              </Button>
+            ))}
+          </Box>
+          <Box sx={{ display: { xs: "none", sm: "flex" } }}>{socialIcons}</Box>
+          <Box sx={{ display: { sm: "block" } }}>
             <Typography
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1, display: { xs: "block" } }}
+              sx={{ flexGrow: 1, display: { sm: "block" } }}
             >
-              {mainInformationDataSet.companyName}
+              <Phone sx={{ color: "green" }} />{" "}
+              {mainInformationDataSet.contactPhone}
             </Typography>
-            <Box sx={{ display: { xs: "none" } }}>
-              {navigationItemsDataSet.map((item, index) => (
-                <Button
-                  key={index}
-                  sx={{ color: colorsDataSet.navbarItems }}
-                  onClick={scrollTo[index]}
-                >
-                  {item}
-                </Button>
-              ))}
-            </Box>
-            <Box sx={{ display: { xs: "none", sm: "flex" } }}>
-              {socialIcons}
-            </Box>
-            <Box sx={{ display: { sm: "block" } }}>
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ flexGrow: 1, display: { sm: "block" } }}
-              >
-                <Phone sx={{ color: "green" }} />{" "}
-                {mainInformationDataSet.contactPhone}
-              </Typography>
-            </Box>
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
+          </Box>
+        </Toolbar>
+      </AppBar>
       <nav>
         <Drawer
           container={container}

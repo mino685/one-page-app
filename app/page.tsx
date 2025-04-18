@@ -45,18 +45,23 @@ export default function Home() {
         sx={{
           minHeight: "100vh",
           background: colorsDataSet.pageBackground,
-          py: 8,
+          py: { xs: 7, sm: 8 },
           color: colorsDataSet.basicFont,
         }}
       >
-        <Container maxWidth="lg">
+        <Box
+          sx={{
+            ml: { xs: 0, sm: 5, md: 10, xl: 50 },
+            mr: { xs: 0, sm: 5, md: 10, xl: 50 },
+          }}
+        >
           <MainInformationComponent
             scrollToContact={() => scrollToSection(contactRef)}
           />
           <AboutUsComponent sectionRef={aboutUsRef} />
           <WorkSkillsComponent sectionRef={workSkillsRef} />
           <ContactComponent sectionRef={contactRef} />
-        </Container>
+        </Box>
       </Box>
       <FooterComponent />
     </>

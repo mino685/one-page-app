@@ -22,7 +22,11 @@ export default function ContactComponent({ sectionRef }: { sectionRef: any }) {
 
   return (
     <>
-      <Box ref={sectionRef} textAlign="center">
+      <Box
+        ref={sectionRef}
+        textAlign="center"
+        sx={{ ml: { xs: 2, sm: 0 }, mr: { xs: 2, sm: 0 } }}
+      >
         <Typography variant="h4" gutterBottom>
           Kontaktujte nás
         </Typography>

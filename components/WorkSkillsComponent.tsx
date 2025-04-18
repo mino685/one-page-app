@@ -19,7 +19,10 @@ export default function WorkSkillsComponent({
   sectionRef: any;
 }) {
   return (
-    <Box sx={{ mb: 10 }} ref={sectionRef}>
+    <Box
+      sx={{ mb: 10, ml: { xs: 2, sm: 0 }, mr: { xs: 2, sm: 0 } }}
+      ref={sectionRef}
+    >
       <Typography variant="h4" textAlign="center" gutterBottom>
         Naše služby
       </Typography>
