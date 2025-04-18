@@ -3,8 +3,13 @@
 import { Box, Button, CardMedia, Skeleton, Typography } from "@mui/material";
 
 import { colorsDataSet, mainInformationDataSet } from "../app/data";
+import { useRef } from "react";
 
-export default function MainInformationComponent() {
+export default function MainInformationComponent({
+  scrollToContact,
+}: {
+  scrollToContact: () => void;
+}) {
   return (
     <Box textAlign="center" sx={{ mb: 10, mt: 4 }}>
       <CardMedia
@@ -29,7 +34,7 @@ export default function MainInformationComponent() {
           backgroundColor: colorsDataSet.mainButton,
           ":hover": { backgroundColor: colorsDataSet.mainButtonHover },
         }}
-        onClick={() => console.log("KONTAKT")}
+        onClick={scrollToContact}
       >
         Kontaktujte nás
       </Button>

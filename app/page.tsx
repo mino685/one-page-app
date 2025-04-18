@@ -9,8 +9,22 @@ import AboutUsComponent from "../components/AboutUsComponent";
 import WorkSkillsComponent from "../components/WorkSkillsComponent";
 import ContactComponent from "../components/ContactComponent";
 import FooterComponent from "../components/FooterComponent";
+import { useRef } from "react";
 
 export default function Home() {
+  const contactRef = useRef<HTMLDivElement>(null);
+  const aboutUsRef = useRef<HTMLDivElement>(null);
+  const workSkillsRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSection = (finalRef: any) => {
+    if (finalRef.current) {
+      finalRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <>
       <Head>
@@ -22,7 +36,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CssBaseline />
-      <NavigationComponent />
+      <NavigationComponent
+        scrollToContact={() => scrollToSection(contactRef)}
+        scrollToAboutUs={() => scrollToSection(aboutUsRef)}
+        scrollToWorkSkills={() => scrollToSection(workSkillsRef)}
+      />
       <Box
         sx={{
           minHeight: "100vh",
@@ -32,10 +50,12 @@ export default function Home() {
         }}
       >
         <Container maxWidth="lg">
-          <MainInformationComponent />
-          <AboutUsComponent />
-          <WorkSkillsComponent />
-          <ContactComponent />
+          <MainInformationComponent
+            scrollToContact={() => scrollToSection(contactRef)}
+          />
+          <AboutUsComponent sectionRef={aboutUsRef} />
+          <WorkSkillsComponent sectionRef={workSkillsRef} />
+          <ContactComponent sectionRef={contactRef} />
         </Container>
       </Box>
       <FooterComponent />

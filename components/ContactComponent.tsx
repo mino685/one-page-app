@@ -11,16 +11,18 @@ import {
 import { useRef, useState } from "react";
 import { colorsDataSet } from "../app/data";
 
-export default function ContactComponent() {
+export default function ContactComponent({ sectionRef }: { sectionRef: any }) {
   const form = useRef<HTMLFormElement>(null);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
+  console.log("CR: ", sectionRef);
+
   return (
     <>
-      <Box textAlign="center">
+      <Box ref={sectionRef} textAlign="center">
         <Typography variant="h4" gutterBottom>
           Kontaktujte nás
         </Typography>

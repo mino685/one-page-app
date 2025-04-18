@@ -13,9 +13,13 @@ import {
 
 import { colorsDataSet, workSkillsDataSet } from "../app/data";
 
-export default function WorkSkillsComponent() {
+export default function WorkSkillsComponent({
+  sectionRef,
+}: {
+  sectionRef: any;
+}) {
   return (
-    <Box sx={{ mb: 10 }}>
+    <Box sx={{ mb: 10 }} ref={sectionRef}>
       <Typography variant="h4" textAlign="center" gutterBottom>
         Naše služby
       </Typography>

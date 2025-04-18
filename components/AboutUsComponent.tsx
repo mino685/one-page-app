@@ -12,10 +12,15 @@ import {
 } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 import { aboutUsDataSet, colorsDataSet } from "../app/data";
+import { RefObject } from "react";
 
-export default function AboutUsComponent() {
+export default function AboutUsComponent({
+  sectionRef,
+}: {
+  sectionRef: RefObject<HTMLDivElement | null>;
+}) {
   return (
-    <Box sx={{ mb: 10 }}>
+    <Box ref={sectionRef} sx={{ mb: 10 }}>
       <Typography variant="h4" gutterBottom sx={{ textAlign: "center" }}>
         O nás
       </Typography>

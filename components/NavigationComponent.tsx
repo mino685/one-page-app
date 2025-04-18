@@ -24,6 +24,8 @@ import {
   FacebookOutlined,
   Twitter,
   Phone,
+  WhatsApp,
+  YouTube,
 } from "@mui/icons-material";
 import {
   colorsDataSet,
@@ -32,12 +34,15 @@ import {
 } from "../app/data";
 
 interface Props {
+  scrollToContact?: () => void;
+  scrollToAboutUs?: () => void;
+  scrollToWorkSkills?: () => void;
   window?: () => Window;
   children?: React.ReactElement<unknown>;
 }
 
 function HideOnScroll(props: Props) {
-  const { children, window } = props;
+  const { window, children } = props;
 
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
@@ -51,35 +56,61 @@ function HideOnScroll(props: Props) {
 }
 
 export default function NavigationComponent(props: Props) {
-  const { window } = props;
+  const { scrollToContact, scrollToAboutUs, scrollToWorkSkills, window } =
+    props;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const theme = useTheme();
+  const scrollTo = [scrollToAboutUs, scrollToWorkSkills, scrollToContact];
+  const drawerWidth = 240;
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const socialIcons = (
+    <>
+      <IconButton size="large" aria-label="Instagram" color="inherit">
+        <Instagram />
+      </IconButton>
+      <IconButton size="large" aria-label="Facebook" color="inherit">
+        <FacebookOutlined />
+      </IconButton>
+      <IconButton size="large" aria-label="Facebook" color="inherit">
+        <Twitter />
+      </IconButton>
+      <IconButton size="large" aria-label="Facebook" color="inherit">
+        <WhatsApp />
+      </IconButton>
+      <IconButton size="large" aria-label="Facebook" color="inherit">
+        <YouTube />
+      </IconButton>
+    </>
+  );
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        {mainInformationDataSet.productName}
+        {mainInformationDataSet.companyName}
       </Typography>
-      <Divider />
+      <Divider sx={{ backgroundColor: "gray" }} />
       <List>
-        {navigationItemsDataSet.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+        {navigationItemsDataSet.map((item, index) => (
+          <ListItem key={index} disablePadding>
+            <ListItemButton
+              onClick={scrollTo[index]}
+              sx={{ textAlign: "center" }}
+            >
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
+      <Divider sx={{ backgroundColor: "gray" }} />
+      <Box sx={{ display: { xs: "flex", alignItems: "center" } }}>
+        {socialIcons}
+      </Box>
     </Box>
   );
-  const drawerWidth = 240;
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <>
@@ -104,46 +135,33 @@ export default function NavigationComponent(props: Props) {
             <Typography
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+              sx={{ flexGrow: 1, display: { xs: "block" } }}
             >
-              {mainInformationDataSet.productName}
+              {mainInformationDataSet.companyName}
             </Typography>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navigationItemsDataSet.map((item) => (
-                <Button key={item} sx={{ color: colorsDataSet.navbarItems }}>
+            <Box sx={{ display: { xs: "none" } }}>
+              {navigationItemsDataSet.map((item, index) => (
+                <Button
+                  key={index}
+                  sx={{ color: colorsDataSet.navbarItems }}
+                  onClick={scrollTo[index]}
+                >
                   {item}
                 </Button>
               ))}
             </Box>
-            <Box sx={{ display: { xs: "flex" } }}>
-              <IconButton
-                size="large"
-                aria-label="show 4 new mails"
-                color="inherit"
+            <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+              {socialIcons}
+            </Box>
+            <Box sx={{ display: { sm: "block" } }}>
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{ flexGrow: 1, display: { sm: "block" } }}
               >
-                <Instagram />
-              </IconButton>
-              <IconButton
-                size="large"
-                aria-label="show 17 new notifications"
-                color="inherit"
-              >
-                <FacebookOutlined />
-              </IconButton>
-              {/*<IconButton
-                size="large"
-                aria-label="show 4 new mails"
-                color="inherit"
-              >
-                <Twitter />
-              </IconButton>*/}
-              <IconButton
-                size="large"
-                aria-label="show 4 new mails"
-                color="inherit"
-              >
-                <Phone /> {mainInformationDataSet.contactPhone}
-              </IconButton>
+                <Phone sx={{ color: "green" }} />{" "}
+                {mainInformationDataSet.contactPhone}
+              </Typography>
             </Box>
           </Toolbar>
         </AppBar>

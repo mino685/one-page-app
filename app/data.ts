@@ -77,10 +77,11 @@ export const aboutUsDataSet = [
 ];*/
 
 export const mainInformationDataSet = {
-  productName: "Kovovýroba a zámočníctvo BRILZ",
+  companyName: "BRIL-Z",
+  productName: "Kovovýroba a zámočníctvo BRIL-Z",
   title:
     "Komplexné zámočnícke práce a kovovýroba – od návrhu a cenovej ponuky až po precíznu realizáciu a doručenie hotového výrobku k vám domov.",
-  contactPhone: " 0908 859 615",
+  contactPhone: "+421 908 859 615",
   contactEmail: "milan.kozak94@gmail.com",
 };
 
