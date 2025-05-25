@@ -1,8 +1,11 @@
 export const mainInformationDataSet = {
-  productName: "Nest Frame Studio",
+  companyName: "NestFrame Studio",
+  companyDescription: "Tvorba webových aplikácií a komplexných dashboardov",
+  productName: "NestFrame Studio",
   title:
     "Dodávame moderné a spoľahlivé riešenia – interaktívne dashboardy, robustné firemné systémy a webové aplikácie šité presne na mieru vašim potrebám.",
-  contactPhone: "+421 908 859 615",
+  contactPhoneVisual: "+421 908 859 615",
+  contactPhone: "tel:+421908859615",
   contactEmail: "milan.kozak94@gmail.com",
 };
 
