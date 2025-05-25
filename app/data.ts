@@ -1,5 +1,5 @@
 export const mainInformationDataSet = {
-  companyName: "NestFrame Studio",
+  companyName: "NestFrame",
   companyDescription: "Tvorba webových aplikácií a komplexných dashboardov",
   productName: "NestFrame Studio",
   title:
