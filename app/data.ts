@@ -1,4 +1,4 @@
-/*export const mainInformationDataSet = {
+export const mainInformationDataSet = {
   productName: "Nest Frame Studio",
   title:
     "Dodávame moderné a spoľahlivé riešenia – interaktívne dashboardy, robustné firemné systémy a webové aplikácie šité presne na mieru vašim potrebám.",
@@ -74,10 +74,11 @@ export const aboutUsDataSet = [
     title: "Spoľahlivý partner pre váš rast",
     desc: "Ak hľadáte spoľahlivého partnera, ktorý rozumie vývoju aj podnikaniu, a dokáže vaše predstavy premeniť na funkčné riešenie – radi si s vami sadneme, porozprávame sa a nájdeme ideálnu cestu vpred.",
   },
-];*/
+];
 
-export const mainInformationDataSet = {
+/*export const mainInformationDataSet = {
   companyName: "BRIL-Z",
+  companyDescription: "Kovovýroba a zámočníctvo",
   productName: "Kovovýroba a zámočníctvo BRIL-Z",
   title:
     "Komplexné zámočnícke práce a kovovýroba – od návrhu a cenovej ponuky až po precíznu realizáciu a doručenie hotového výrobku k vám domov.",
@@ -143,4 +144,4 @@ export const aboutUsDataSet = [
     title: "Spoľahlivý partner na ktorého sa môžete obrátiť",
     desc: "Vaša spokojnosť je pre nás prioritou. Komunikujeme otvorene, dodržiavame termíny a ponúkame technické poradenstvo počas celej spolupráce.",
   },
-];
+];*/
