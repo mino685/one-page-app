@@ -14,7 +14,7 @@ export default function MainInformationComponent({
     <Box textAlign="center" sx={{ mt: { xs: 0, sm: 4 } }}>
       <CardMedia
         sx={{ height: { xs: 200, sm: 350 }, borderRadius: { xs: 0, sm: 4 } }}
-        image="/brilzW.jpg"
+        image="/mainImage.jpg"
         title="green iguana"
       />
       <Box

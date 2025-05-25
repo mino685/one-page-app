@@ -44,7 +44,7 @@ export default function AboutUsComponent({
           <Grid size={{ xs: 12, md: index % 2 === 0 ? 8 : 4 }}>
             <CardMedia
               sx={{ height: 250, borderRadius: { xs: 0, sm: 2 } }}
-              image="/brilzW.jpg"
+              image={item.imageWidth}
               title="green iguana"
             />
           </Grid>
@@ -55,7 +55,7 @@ export default function AboutUsComponent({
                 borderRadius: 2,
                 display: { xs: "none", sm: "flex" },
               }}
-              image="/brilzH.jpg"
+              image={item.imageHeight}
               title="green iguana"
             />
           </Grid>

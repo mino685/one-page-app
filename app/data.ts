@@ -25,26 +25,32 @@ export const workSkillsDataSet = [
   {
     title: "Webové dashboardy",
     desc: "Interaktívne vizualizácie dát, ktoré pomáhajú firmám sledovať kľúčové metriky v reálnom čase. Navrhujeme ich tak, aby boli nielen funkčné, ale aj intuitívne pre každodenné používanie tímom aj manažmentom.",
+    image: "/aboutUs02.jpg",
   },
   {
     title: "Firemné aplikácie",
     desc: "Komplexné interné systémy na mieru, ktoré digitalizujú firemné procesy, automatizujú rutiny a šetria čas. Či už ide o správu objednávok, skladov, zamestnancov alebo CRM, tvoríme riešenia, ktoré rastú s vaším biznisom.",
+    image: "/aboutUs03.jpg",
   },
   {
     title: "Webové stránky",
     desc: "Tvoríme moderné a responzívne prezentačné weby, ktoré kombinujú dizajn, rýchlosť a technické SEO. Od pristávacích stránok až po robustné firemné portály – všetko optimalizované pre výkon a používateľský zážitok.",
+    image: "/aboutUs01.jpg",
   },
   {
     title: "Klientské portály",
     desc: "Bezpečné zóny pre vašich zákazníkov alebo partnerov, kde môžu spravovať svoje údaje, objednávky či dokumenty. Prepojené s vaším systémom a dostupné 24/7, plne prispôsobené vašim potrebám.",
+    image: "/aboutUs04.jpg",
   },
   {
     title: "Objednávkové systémy",
     desc: "Online systémy pre správu objednávok a rezervácií – od jednoduchých formulárov až po zložité multi-step procesy s napojením na platobné brány a ERP systémy.",
+    image: "/aboutUs09.jpg",
   },
   {
     title: "Admin rozhrania",
     desc: "Flexibilné backendové nástroje pre správu obsahu, užívateľov alebo produktov. Vytvárame ich s dôrazom na jednoduchosť, bezpečnosť a prístupové práva.",
+    image: "/aboutUs10.jpg",
   },
   //{
   //  title: "Automatizácia procesov",
@@ -60,22 +66,34 @@ export const aboutUsDataSet = [
   {
     title: "Spojenie dizajnu, technológie a obchodu",
     desc: "Sme slovenské softvérové štúdio, ktoré prepája dizajn, technológie a obchod do jedného funkčného celku. Naším cieľom nie je len vytvoriť pekný web alebo dashboard – chceme prinášať riešenia, ktoré dávajú zmysel, šetria čas, zefektívňujú procesy a reálne pomáhajú firmám rásť.",
+    imageHeight: "/aboutUs03.jpg",
+    imageWidth: "/aboutUs02.jpg",
   },
   {
     title: "Moderné, škálovateľné a bezpečné riešenia",
     desc: "Vďaka dlhoročným skúsenostiam v oblasti webového vývoja, dátovej vizualizácie a firemných systémov tvoríme riešenia, ktoré sú nielen moderné, ale najmä škálovateľné, bezpečné a dlhodobo udržateľné. Každý projekt navrhujeme tak, aby spĺňal technické štandardy, no zároveň bol intuitívny pre bežného používateľa.",
+    imageHeight: "/aboutUs01.jpg",
+    imageWidth: "/aboutUs04.jpg",
   },
   {
     title: "Pre malé aj veľké firmy",
     desc: "Spolupracujeme so živnostníkmi, menšími firmami, ale aj etablovanými spoločnosťami, ktoré potrebujú kvalitné digitálne nástroje – či už ide o prehľadný interný systém, vizualizáciu biznis dát v reálnom čase alebo zákaznícky portál postavený na mieru.",
+    imageHeight: "/aboutUs05.jpg",
+    imageWidth: "/aboutUs06.jpg",
   },
   {
     title: "Poctivý prístup a dlhodobé partnerstvá",
     desc: "Veríme, že kľúčom k úspechu je otvorená komunikácia, poctivá analytická príprava a technologické know-how. Práve preto s klientmi budujeme dlhodobé partnerstvá, nie jednorazové projekty.",
+    image: "/aboutUs04.jpg",
+    imageHeight: "/aboutUs07.jpg",
+    imageWidth: "/aboutUs08.jpg",
   },
   {
     title: "Spoľahlivý partner pre váš rast",
     desc: "Ak hľadáte spoľahlivého partnera, ktorý rozumie vývoju aj podnikaniu, a dokáže vaše predstavy premeniť na funkčné riešenie – radi si s vami sadneme, porozprávame sa a nájdeme ideálnu cestu vpred.",
+    image: "/aboutUs05.jpg",
+    imageHeight: "/aboutUs09.jpg",
+    imageWidth: "/aboutUs10.jpg",
   },
 ];
 

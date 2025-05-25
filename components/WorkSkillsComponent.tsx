@@ -33,7 +33,7 @@ export default function WorkSkillsComponent({
               <Card sx={{ minHeight: 350 }}>
                 <CardMedia
                   sx={{ height: 140 }}
-                  image="/brilzW.jpg"
+                  image={item.image}
                   title="green iguana"
                 />
                 <CardContent>
